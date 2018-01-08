@@ -104,8 +104,18 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate {
      return cell
      }
     
-    
-    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "ShowMentions", sender: self)
+    }
+   
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowMentions", let destination = segue.destination as? MentionsTableViewController {
+            if let _ = sender as? MainTableViewController, let indexPath = tableView.indexPathForSelectedRow {
+                let tweet = tweets[indexPath.section][indexPath.row]
+                destination.tweet = tweet
+            }
+        }
+    }
     
     
 }

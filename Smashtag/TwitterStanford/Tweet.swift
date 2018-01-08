@@ -27,6 +27,24 @@ public struct Tweet : CustomStringConvertible
     
     public var description: String { return "\(user) - \(created)\n\(text)\nhashtags: \(hashtags)\nurls: \(urls)\nuser_mentions: \(userMentions)" + "\nid: \(identifier)" }
     
+    //attributed text with highlight for hastags, urls, and usernames
+    public func attributedText() -> NSAttributedString {
+        let attributedText = NSMutableAttributedString(string: self.text)
+        
+        self.hashtags.forEach { mention in
+            attributedText.addAttributes(Attributes.hashtag, range: mention.nsrange)
+        }
+        self.urls.forEach { mention in
+            attributedText.addAttributes(Attributes.url, range: mention.nsrange)
+        }
+        self.userMentions.forEach { mention in
+            attributedText.addAttributes(Attributes.userName, range: mention.nsrange)
+        }
+        
+        
+        return attributedText
+    }
+    
     // MARK: - Internal Implementation
     
     init?(data: NSDictionary?)
@@ -118,6 +136,19 @@ public struct Mention: CustomStringConvertible
         self.keyword = text.substring(with: nsrange)
         self.nsrange = nsrange
     }
+}
+
+// NSAttributedString colors for meentions
+struct Attributes {
+    static let hashtag: [NSAttributedStringKey : Any] = [
+            NSAttributedStringKey.foregroundColor: UIColor.purple
+    ]
+    static let url: [NSAttributedStringKey : Any] = [
+        NSAttributedStringKey.foregroundColor: UIColor.blue
+    ]
+    static let userName: [NSAttributedStringKey : Any] = [
+        NSAttributedStringKey.foregroundColor: UIColor.cyan
+    ]
 }
 
 private let twitterDateFormatter: DateFormatter = {
