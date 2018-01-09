@@ -93,8 +93,20 @@
                             <outlet property="delegate" destination="P0R-te-BqJ" id="lZA-Xb-vLK"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="m6C-Lr-obp"/>
+                    <navigationItem key="navigationItem" id="m6C-Lr-obp">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="a9Z-9L-Khv">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="shu-dE-Ps4">
+                                <rect key="frame" x="304" y="7" width="55" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Log Out"/>
+                                <connections>
+                                    <action selector="logOut:" destination="P0R-te-BqJ" eventType="touchUpInside" id="Ieu-vM-r3w"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="logOutButton" destination="shu-dE-Ps4" id="nn1-uj-ogA"/>
                         <outlet property="searchTextField" destination="Ajx-b1-GMA" id="4V4-VZ-Hp2"/>
                         <segue destination="8Hn-kS-Otz" kind="show" identifier="ShowMentions" id="0IJ-sB-6hQ"/>
                     </connections>
@@ -144,7 +156,7 @@
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="p6L-yx-gQ5">
                                             <rect key="frame" x="16" y="0.0" width="324" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>

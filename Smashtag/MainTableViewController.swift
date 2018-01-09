@@ -47,27 +47,17 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate {
             }
         }
     }
-    
+   
+    var logInButton: TWTRLogInButton?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchText = "#stanford"
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableViewAutomaticDimension
-        
         //TwitterKit: Log In
         let store = TWTRTwitter.sharedInstance().sessionStore
         if (!store.hasLoggedInUsers()) {
-            print("SESSION STORE: " + String(describing: store.session()))
-            let logInButton = TWTRLogInButton(logInCompletion: { session, error in
-                if (session != nil) {
-                    print("signed in as \(String(describing: session?.userName))");
-                } else {
-                    print("error: \(String(describing: error?.localizedDescription))");
-                }
-            })
-            logInButton.center = self.view.center
-            self.view.addSubview(logInButton)
+            showTwitterLogInButton()
         }
     }
     
@@ -117,6 +107,39 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate {
         }
     }
     
+    @IBOutlet weak var logOutButton: UIButton!
     
+    @IBAction func logOut(_ sender: UIButton) {
+        logOutFRomTwitter()
+    }
+    private func logOutFRomTwitter() {
+        let store = TWTRTwitter.sharedInstance().sessionStore
+        if let userID = store.session()?.userID {
+            store.logOutUserID(userID)
+            tweets.removeAll()
+            tableView.reloadData()
+            searchText = ""
+            showTwitterLogInButton()
+        }
+    }
+    private func showTwitterLogInButton(){
+        logOutButton.isHidden = true
+        logInButton = TWTRLogInButton(logInCompletion: { [weak self] session, error in
+            if (session != nil) {
+                print("signed in as \(String(describing: session?.userName))");
+                DispatchQueue.main.async {
+                    self?.logInButton?.removeFromSuperview()
+                    self?.logOutButton.isHidden = false
+                }
+                self?.searchText = "#Polska"
+            } else {
+                print("error: \(String(describing: error?.localizedDescription))");
+            }
+        })
+        logInButton?.center = self.view.center
+        self.view.addSubview(logInButton!)
+    }
 }
+
+
 

@@ -16,7 +16,7 @@ class MentionImageTableViewCell: UITableViewCell {
     var item: MediaItem? {
         didSet{
             guard let item = item else { return }
-            img.contentMode = .scaleAspectFit
+            img.contentMode = .center
             downloadImage(url: item.url)
         }
     }
