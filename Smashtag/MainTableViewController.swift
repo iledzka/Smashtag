@@ -54,7 +54,7 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate {
         super.viewDidLoad()
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableViewAutomaticDimension
-        searchText = "#image"
+     
         //TwitterKit: Log In
         let store = TWTRTwitter.sharedInstance().sessionStore
         if (!store.hasLoggedInUsers()) {
@@ -65,6 +65,7 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var searchTextField: UITextField! {
         didSet {
             searchTextField.delegate = self
+            searchTextField.text = searchText
         }
     }
     

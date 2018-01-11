@@ -109,8 +109,16 @@ class MentionsTableViewController: UITableViewController {
             }
         case .media:
             performSegue(withIdentifier: "ImageScrollViewSegue", sender: self)
-        default:
-            break
+        case .hashtags:
+            if let vc = storyboard?.instantiateViewController(withIdentifier: "mainTableViewController") as? MainTableViewController {
+                vc.searchText = (item as? HashtagsMentionModelViewItem)?.hashtags[indexPath.row].keyword
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        case .userMentions:
+            if let vc = storyboard?.instantiateViewController(withIdentifier: "mainTableViewController") as? MainTableViewController {
+                vc.searchText = (item as? UsernameMentionModelViewItem)?.userMention[indexPath.row].keyword
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
         }
     }
     // MARK: - Navigation

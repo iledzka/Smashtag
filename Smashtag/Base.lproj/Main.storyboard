@@ -13,7 +13,7 @@
         <!--Main Table View Controller-->
         <scene sceneID="SuV-59-dSt">
             <objects>
-                <tableViewController id="P0R-te-BqJ" customClass="MainTableViewController" customModule="Smashtag" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="mainTableViewController" id="P0R-te-BqJ" customClass="MainTableViewController" customModule="Smashtag" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="OHp-Mc-aeG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
