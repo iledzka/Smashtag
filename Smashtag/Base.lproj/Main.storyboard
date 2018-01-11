@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -115,6 +116,47 @@
             </objects>
             <point key="canvasLocation" x="503.19999999999999" y="178.56071964017991"/>
         </scene>
+        <!--Scrolling Image View Controller-->
+        <scene sceneID="4Sy-8M-YUJ">
+            <objects>
+                <viewController id="sJu-Xv-lKp" customClass="ScrollingImageViewController" customModule="Smashtag" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="vhI-jr-f2X">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="Get-Yz-aEV">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="JYk-fQ-Idx">
+                                        <rect key="frame" x="177" y="259" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="JYk-fQ-Idx" secondAttribute="trailing" constant="178" id="EBb-Vc-xk7"/>
+                                    <constraint firstItem="JYk-fQ-Idx" firstAttribute="centerY" secondItem="Get-Yz-aEV" secondAttribute="centerY" id="EaA-9g-zRl"/>
+                                    <constraint firstAttribute="bottom" secondItem="JYk-fQ-Idx" secondAttribute="bottom" constant="324" id="NIO-Bk-YCV"/>
+                                    <constraint firstItem="JYk-fQ-Idx" firstAttribute="centerX" secondItem="Get-Yz-aEV" secondAttribute="centerX" id="Vi4-pT-7fb"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Get-Yz-aEV" secondAttribute="trailing" id="0Gn-8K-kgd"/>
+                            <constraint firstItem="Get-Yz-aEV" firstAttribute="top" secondItem="vhI-jr-f2X" secondAttribute="top" id="FnZ-37-K04"/>
+                            <constraint firstItem="Get-Yz-aEV" firstAttribute="leading" secondItem="vhI-jr-f2X" secondAttribute="leading" id="awX-sQ-dGj"/>
+                            <constraint firstItem="Get-Yz-aEV" firstAttribute="bottom" secondItem="Lfy-io-UeB" secondAttribute="bottom" id="l7U-gC-Xs2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Lfy-io-UeB"/>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="Get-Yz-aEV" id="M2S-g9-hWQ"/>
+                        <outlet property="spinner" destination="JYk-fQ-Idx" id="zLQ-HQ-xKD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wjl-Qb-AZb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="516" y="953.97301349325346"/>
+        </scene>
         <!--Mentions Table View Controller-->
         <scene sceneID="5cY-ZD-1mR">
             <objects>
@@ -131,19 +173,25 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="62.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZAK-DX-Iys">
-                                            <rect key="frame" x="20" y="20" width="335" height="22.5"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZAK-DX-Iys">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="63"/>
                                         </imageView>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="TtR-SW-DJw">
+                                            <rect key="frame" x="177.5" y="21.5" width="20" height="20"/>
+                                        </activityIndicatorView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="ZAK-DX-Iys" firstAttribute="top" secondItem="7qn-gy-MnQ" secondAttribute="top" constant="20" symbolic="YES" id="Kg3-9V-KFd"/>
-                                        <constraint firstAttribute="bottom" secondItem="ZAK-DX-Iys" secondAttribute="bottom" constant="20" symbolic="YES" id="Rf3-zP-Msy"/>
-                                        <constraint firstItem="ZAK-DX-Iys" firstAttribute="leading" secondItem="7qn-gy-MnQ" secondAttribute="leading" constant="20" symbolic="YES" id="UQZ-ty-oWB"/>
-                                        <constraint firstAttribute="trailing" secondItem="ZAK-DX-Iys" secondAttribute="trailing" constant="20" symbolic="YES" id="wDY-FR-R2y"/>
+                                        <constraint firstItem="ZAK-DX-Iys" firstAttribute="top" secondItem="7qn-gy-MnQ" secondAttribute="top" id="Kg3-9V-KFd"/>
+                                        <constraint firstAttribute="bottom" secondItem="ZAK-DX-Iys" secondAttribute="bottom" id="Rf3-zP-Msy"/>
+                                        <constraint firstItem="TtR-SW-DJw" firstAttribute="centerX" secondItem="ZAK-DX-Iys" secondAttribute="centerX" id="SrA-55-e3C"/>
+                                        <constraint firstItem="ZAK-DX-Iys" firstAttribute="leading" secondItem="7qn-gy-MnQ" secondAttribute="leading" id="UQZ-ty-oWB"/>
+                                        <constraint firstItem="TtR-SW-DJw" firstAttribute="centerY" secondItem="ZAK-DX-Iys" secondAttribute="centerY" id="vhe-EI-LCZ"/>
+                                        <constraint firstAttribute="trailing" secondItem="ZAK-DX-Iys" secondAttribute="trailing" id="wDY-FR-R2y"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="img" destination="ZAK-DX-Iys" id="YCm-8K-T2h"/>
+                                    <outlet property="spinner" destination="TtR-SW-DJw" id="6DZ-dW-M13"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MentionBasicCell" textLabel="p6L-yx-gQ5" style="IBUITableViewCellStyleDefault" id="lWX-eM-LKA" customClass="MentionBasicTableViewCell" customModule="Smashtag" customModuleProvider="target">
@@ -172,6 +220,9 @@
                             <outlet property="delegate" destination="8Hn-kS-Otz" id="RCg-j3-pL5"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="sJu-Xv-lKp" kind="show" identifier="ImageScrollViewSegue" id="MjG-Le-yVT"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VWZ-MH-i6V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

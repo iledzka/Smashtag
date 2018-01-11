@@ -58,8 +58,7 @@ class MentionsTableViewController: UITableViewController {
         switch item.type {
         case .media:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "MentionImage", for: indexPath) as? MentionImageTableViewCell {
-                //fetch image (async???)
-                cell.item = tweet?.media[indexPath.row]
+                cell.imageURL = tweet?.media[indexPath.row].url
                 return cell
             }
         case .hashtags:
@@ -87,7 +86,9 @@ class MentionsTableViewController: UITableViewController {
         case .media:
             let width = UIScreen.main.bounds.width
             let aspectRatio = (item as? MediaMentionModelViewItem)?.mediaItems[indexPath.row].aspectRatio
-            return width / CGFloat(aspectRatio ?? 0)
+            
+            return width / CGFloat(aspectRatio!)
+          
         default:
             return UITableViewAutomaticDimension
         }
@@ -97,14 +98,17 @@ class MentionsTableViewController: UITableViewController {
         let item = items[indexPath.section]
         switch item.type {
         case .urls:
-            let url = URL(fileURLWithPath: ((item as? UrlsMentionModelViewItem)?.urls[indexPath.row].keyword)!)
-            if UIApplication.shared.canOpenURL(url){
-                if #available(iOS 10.0, *) {
-                    UIApplication.shared.open(url, options: [:], completionHandler: { success in print("Success - opened url: \(success)") })
-                } else {
-                    UIApplication.shared.openURL(url)
-                }
+            if let url = URL(string: ((item as? UrlsMentionModelViewItem)?.urls[indexPath.row].keyword)!){
+                guard UIApplication.shared.canOpenURL(url) else { return }
+                
+                    if #available(iOS 10.0, *) {
+                        UIApplication.shared.open(url, options: [:], completionHandler: { success in print("Success - opened url: \(success)") })
+                    } else {
+                        UIApplication.shared.openURL(url)
+                    }
             }
+        case .media:
+            performSegue(withIdentifier: "ImageScrollViewSegue", sender: self)
         default:
             break
         }
@@ -112,11 +116,14 @@ class MentionsTableViewController: UITableViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-   /* override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "ImageScrollViewSegue", let destination = segue.destination as? ScrollingImageViewController, let indexPath = tableView.indexPathForSelectedRow {
+        let item = items[indexPath.section]
+        if let image = (item as? MediaMentionModelViewItem)?.mediaItems[indexPath.row] {
+            destination.imageURL = image.url
+        }
     }
-    */
+    }
 
 }
 

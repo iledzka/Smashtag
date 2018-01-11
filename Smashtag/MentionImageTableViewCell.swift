@@ -10,14 +10,15 @@ import UIKit
 
 class MentionImageTableViewCell: UITableViewCell {
 
-   
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    
     @IBOutlet weak var img: UIImageView!
     
-    var item: MediaItem? {
+    var imageURL: URL? {
         didSet{
-            guard let item = item else { return }
-            img.contentMode = .center
-            downloadImage(url: item.url)
+            spinner.startAnimating()
+            guard let imageURL = imageURL else { return }
+            downloadImage(url: imageURL)
         }
     }
     
@@ -42,6 +43,7 @@ class MentionImageTableViewCell: UITableViewCell {
             print(response?.suggestedFilename ?? url.lastPathComponent)
             DispatchQueue.main.async() {
                 self.img.image = UIImage(data: data)
+                self.spinner.stopAnimating()
             }
         }
     }

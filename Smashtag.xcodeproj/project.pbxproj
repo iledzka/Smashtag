@@ -22,6 +22,7 @@
 		2BAFA9B12002351F002C690B /* MentionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAFA9B02002351F002C690B /* MentionsTableViewController.swift */; };
 		2BAFA9B3200263FE002C690B /* MentionImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAFA9B2200263FE002C690B /* MentionImageTableViewCell.swift */; };
 		2BAFA9B52002A5A0002C690B /* MentionBasicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAFA9B42002A5A0002C690B /* MentionBasicTableViewCell.swift */; };
+		2BFC73A120069A4F00F49321 /* ScrollingImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFC73A020069A4F00F49321 /* ScrollingImageViewController.swift */; };
 		A1A815FADA8D46E49B97BD82 /* Pods_Smashtag.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E3A129230E5CCAFDC703CC /* Pods_Smashtag.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		2BAFA9B02002351F002C690B /* MentionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentionsTableViewController.swift; sourceTree = "<group>"; };
 		2BAFA9B2200263FE002C690B /* MentionImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentionImageTableViewCell.swift; sourceTree = "<group>"; };
 		2BAFA9B42002A5A0002C690B /* MentionBasicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentionBasicTableViewCell.swift; sourceTree = "<group>"; };
+		2BFC73A020069A4F00F49321 /* ScrollingImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollingImageViewController.swift; sourceTree = "<group>"; };
 		3DC687812AB322230468D637 /* Pods-Smashtag.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smashtag.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smashtag/Pods-Smashtag.debug.xcconfig"; sourceTree = "<group>"; };
 		4006A3183E42DEF1EE88353C /* Pods-Smashtag.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smashtag.release.xcconfig"; path = "Pods/Target Support Files/Pods-Smashtag/Pods-Smashtag.release.xcconfig"; sourceTree = "<group>"; };
 		E7E3A129230E5CCAFDC703CC /* Pods_Smashtag.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smashtag.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +93,7 @@
 				2BAFA99C1FFFF86C002C690B /* TweetTableViewCell.swift */,
 				2BAFA99D1FFFF86C002C690B /* TwitterKit-Bridging-Header.h */,
 				2BAFA99E1FFFF86C002C690B /* TwitterStanford */,
+				2BFC73A020069A4F00F49321 /* ScrollingImageViewController.swift */,
 			);
 			path = Smashtag;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				2BAFA9AF1FFFF86C002C690B /* User.swift in Sources */,
 				2BAFA9B12002351F002C690B /* MentionsTableViewController.swift in Sources */,
 				2BAFA9A61FFFF86C002C690B /* MainTableViewController.swift in Sources */,
+				2BFC73A120069A4F00F49321 /* ScrollingImageViewController.swift in Sources */,
 				2BAFA9AA1FFFF86C002C690B /* TweetTableViewCell.swift in Sources */,
 				2BAFA9B52002A5A0002C690B /* MentionBasicTableViewCell.swift in Sources */,
 				2BAFA9AC1FFFF86C002C690B /* NSDictionary+KeyPathConvenience.swift in Sources */,

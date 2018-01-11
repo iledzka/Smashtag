@@ -47,13 +47,14 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate {
             }
         }
     }
-   
+    
     var logInButton: TWTRLogInButton?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableViewAutomaticDimension
+        searchText = "#image"
         //TwitterKit: Log In
         let store = TWTRTwitter.sharedInstance().sessionStore
         if (!store.hasLoggedInUsers()) {
