@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B1DF4D1200B90FF00DFE42B /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1DF4D0200B90FF00DFE42B /* UserDefaultsManager.swift */; };
+		2B1DF4D3200BE67700DFE42B /* SearchesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1DF4D2200BE67700DFE42B /* SearchesTableViewController.swift */; };
+		2B1DF4D5200F5AC200DFE42B /* SearchesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1DF4D4200F5AC200DFE42B /* SearchesTableViewCell.swift */; };
+		2B1DF4D7200F5F5C00DFE42B /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1DF4D6200F5F5C00DFE42B /* TabBarViewController.swift */; };
 		2BAFA9A41FFFF86C002C690B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BAFA9931FFFF86C002C690B /* Main.storyboard */; };
 		2BAFA9A51FFFF86C002C690B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2BAFA9951FFFF86C002C690B /* Info.plist */; };
 		2BAFA9A61FFFF86C002C690B /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAFA9961FFFF86C002C690B /* MainTableViewController.swift */; };
@@ -27,6 +31,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B1DF4D0200B90FF00DFE42B /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		2B1DF4D2200BE67700DFE42B /* SearchesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchesTableViewController.swift; sourceTree = "<group>"; };
+		2B1DF4D4200F5AC200DFE42B /* SearchesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchesTableViewCell.swift; sourceTree = "<group>"; };
+		2B1DF4D6200F5F5C00DFE42B /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		2B2443501FFF9794001476B4 /* Smashtag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smashtag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BAFA9941FFFF86C002C690B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2BAFA9951FFFF86C002C690B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -84,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				2BAFA9931FFFF86C002C690B /* Main.storyboard */,
+				2B1DF4D6200F5F5C00DFE42B /* TabBarViewController.swift */,
 				2BAFA9B2200263FE002C690B /* MentionImageTableViewCell.swift */,
 				2BAFA9B42002A5A0002C690B /* MentionBasicTableViewCell.swift */,
 				2BAFA9951FFFF86C002C690B /* Info.plist */,
@@ -94,6 +103,9 @@
 				2BAFA99D1FFFF86C002C690B /* TwitterKit-Bridging-Header.h */,
 				2BAFA99E1FFFF86C002C690B /* TwitterStanford */,
 				2BFC73A020069A4F00F49321 /* ScrollingImageViewController.swift */,
+				2B1DF4D0200B90FF00DFE42B /* UserDefaultsManager.swift */,
+				2B1DF4D2200BE67700DFE42B /* SearchesTableViewController.swift */,
+				2B1DF4D4200F5AC200DFE42B /* SearchesTableViewCell.swift */,
 			);
 			path = Smashtag;
 			sourceTree = "<group>";
@@ -261,16 +273,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B1DF4D7200F5F5C00DFE42B /* TabBarViewController.swift in Sources */,
 				2BAFA9A71FFFF86C002C690B /* AppDelegate.swift in Sources */,
 				2BAFA9AD1FFFF86C002C690B /* Request.swift in Sources */,
 				2BAFA9AB1FFFF86C002C690B /* MediaItem.swift in Sources */,
+				2B1DF4D1200B90FF00DFE42B /* UserDefaultsManager.swift in Sources */,
 				2BAFA9AE1FFFF86C002C690B /* Tweet.swift in Sources */,
+				2B1DF4D3200BE67700DFE42B /* SearchesTableViewController.swift in Sources */,
 				2BAFA9B3200263FE002C690B /* MentionImageTableViewCell.swift in Sources */,
 				2BAFA9AF1FFFF86C002C690B /* User.swift in Sources */,
 				2BAFA9B12002351F002C690B /* MentionsTableViewController.swift in Sources */,
 				2BAFA9A61FFFF86C002C690B /* MainTableViewController.swift in Sources */,
 				2BFC73A120069A4F00F49321 /* ScrollingImageViewController.swift in Sources */,
 				2BAFA9AA1FFFF86C002C690B /* TweetTableViewCell.swift in Sources */,
+				2B1DF4D5200F5AC200DFE42B /* SearchesTableViewCell.swift in Sources */,
 				2BAFA9B52002A5A0002C690B /* MentionBasicTableViewCell.swift in Sources */,
 				2BAFA9AC1FFFF86C002C690B /* NSDictionary+KeyPathConvenience.swift in Sources */,
 			);

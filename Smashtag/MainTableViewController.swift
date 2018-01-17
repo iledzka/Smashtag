@@ -24,6 +24,7 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate {
             tableView.reloadData()
             searchForTweets()
             title = searchText
+            UserDefaultsManager.addSearch(searchText!)
         }
     }
     private func twitterRequest() -> Request? {
@@ -97,6 +98,9 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate {
      }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let viewsOnStack = self.navigationController?.viewControllers.count {
+            guard viewsOnStack < 20 else { return } 
+        }
         self.performSegue(withIdentifier: "ShowMentions", sender: self)
     }
    
